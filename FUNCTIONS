@@ -33,3 +33,21 @@ def F_C(S,E,W):
             print(i," ",ceil(C))    
         
 F_C(S,E,W)  
+
+#P3: Find power of a number-----------------
+
+from os import *
+from sys import *
+from collections import *
+from math import *
+
+#Your code goes here
+base, exponent = map(int, input().split())
+
+def pow_func(base, exponent):
+    if base==0 and exponent == 0:
+        print(1)
+    else:
+        print(int(pow(base, exponent)))
+
+pow_func(base, exponent)
