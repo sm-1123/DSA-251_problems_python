@@ -1,3 +1,5 @@
+# Sum of Even Numbers till N
+
 N = int(input())
 sum=0
 def even_sum(N) :
