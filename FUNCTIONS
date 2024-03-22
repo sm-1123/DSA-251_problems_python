@@ -1,4 +1,4 @@
-# Sum of Even Numbers till N
+#P1: Sum of Even Numbers till N--------
 
 N = int(input())
 sum=0
@@ -10,3 +10,26 @@ def even_sum(N) :
         else :
             i+=1
     print(sum)
+
+#P2: Fahrenheit to Celsius--------------
+
+from os import *
+from sys import *
+from collections import *
+from math import *
+
+#Your code goes here
+S = int(input())
+E = int(input())
+W = int(input())
+C=0
+
+def F_C(S,E,W):
+    for i in range(S,E+1,W):
+        C = (i-32)*5/9
+        if C>0:
+            print(i," ",floor(C))
+        else:
+            print(i," ",ceil(C))    
+        
+F_C(S,E,W)  
