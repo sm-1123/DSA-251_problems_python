@@ -1,1 +1,9 @@
+#----LINEAR SEARCH-------
 
+def linearSearch(arr, n, x) :
+    #Your code goes here
+    for i in range(0, n):
+        if arr[i]==x:
+            return i
+        
+    return -1    
