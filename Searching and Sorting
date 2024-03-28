@@ -50,3 +50,16 @@ def bubbleSort(arr,n):
             break                   
     # Do not return anything. Update the given array in-place
     pass
+
+#-------Insertion Sort------------
+
+def insertionSort(n: int, arr: List[int]) -> None:
+    # Write your code here.
+    for i in range(n):
+        j=i
+        while j>0 and arr[j-1]>arr[j]:
+            arr[j-1], arr[j] = arr[j], arr[j-1]
+            j-=1
+            
+    
+    pass
