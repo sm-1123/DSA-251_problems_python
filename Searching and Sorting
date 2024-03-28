@@ -1,4 +1,4 @@
-#----LINEAR SEARCH-------
+1.#----LINEAR SEARCH-------
 
 def linearSearch(arr, n, x) :
     #Your code goes here
@@ -8,7 +8,7 @@ def linearSearch(arr, n, x) :
         
     return -1    
 
-#----Binary Search-----------------
+2.#----Binary Search-----------------
 
 def search(nums: [int], target: int):
     # write your code logic !!
@@ -21,7 +21,7 @@ def search(nums: [int], target: int):
         elif nums[mid]<target:
             low=mid+1
 
-#------Selection sort------------------
+3.#------Selection sort------------------
 
 def selectionSort(arr,n):
     # Write your code here
@@ -35,7 +35,7 @@ def selectionSort(arr,n):
     pass
 
 
-#-----------Bubble Sort-----------------
+4.#-----------Bubble Sort-----------------
 
 def bubbleSort(arr,n):
     # Write your code here
@@ -51,7 +51,7 @@ def bubbleSort(arr,n):
     # Do not return anything. Update the given array in-place
     pass
 
-#-------Insertion Sort------------
+5.#-------Insertion Sort------------
 
 def insertionSort(n: int, arr: List[int]) -> None:
     # Write your code here.
