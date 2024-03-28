@@ -33,3 +33,20 @@ def selectionSort(arr,n):
         arr[i], arr[min] = arr[min], arr[i]       
     # Do not return anything. Update the given array in-place
     pass
+
+
+#-----------Bubble Sort-----------------
+
+def bubbleSort(arr,n):
+    # Write your code here
+    
+    for i in range(n):
+        swap = 0
+        for j in range(0,n-i-1):
+            if arr[j]>arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                swap = 1
+        if swap==0:
+            break                   
+    # Do not return anything. Update the given array in-place
+    pass
