@@ -1,1 +1,15 @@
+#p3.Sum of even & odd
+
+n = int(input())
+s = str(n)
+
+sum_e, sum_o = 0, 0
+for i in s:
+    j=int(i)
+    if j%2==0:
+        sum_e+=j
+    else:
+        sum_o+=j 
+
+print(f"{sum_e} {sum_o}")                
 
