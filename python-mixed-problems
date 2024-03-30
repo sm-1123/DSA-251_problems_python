@@ -13,3 +13,15 @@ for i in s:
 
 print(f"{sum_e} {sum_o}")                
 
+#P5:N-th Fibonacci Number
+
+def fibonacciNumber(n):
+    # Write your code here.
+    mod = 10**9 + 7
+    arr = [0]*100000
+    arr[0]=0
+    arr[1]=1
+    for i in range(2,100000):
+        arr[i] = (arr[i-1]+arr[i-2])%mod
+    return arr[n]%mod   
+
