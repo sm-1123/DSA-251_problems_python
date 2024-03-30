@@ -25,3 +25,14 @@ def fibonacciNumber(n):
         arr[i] = (arr[i-1]+arr[i-2])%mod
     return arr[n]%mod   
 
+#P6:Count Digits
+
+def countDigits(n: int) -> int:
+    a = [int(n) for n in str(n)]
+    cnt=0
+    for i in a:
+        if i!=0 and n%i == 0:
+            cnt+=1
+    return cnt    
+    pass
+
