@@ -36,3 +36,11 @@ def countDigits(n: int) -> int:
     return cnt    
     pass
 
+#P7: Second Largest Number
+
+def getSecondOrderElements(n: int,  a: [int]) -> [int]:
+    # Write your code here.
+    n=len(a)
+    a.sort(reverse= True)
+    return a[1],a[-2]
+    pass
