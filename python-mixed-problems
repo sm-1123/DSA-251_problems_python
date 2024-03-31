@@ -82,3 +82,15 @@ def reverseString(str: str) -> str:
     n=" ".join(s)
     return n
     pass
+
+#P13:Polynomials ****
+
+def multiply(a: List[int], b: List[int], c: int) -> List[int]:
+    # Write your code here.
+    result = [0] * (len(a) + len(b) - 1)
+
+    for i in range(len(a)):
+        for j in range(len(b)):
+            result[i + j] += a[i] * b[j]
+
+    return result
