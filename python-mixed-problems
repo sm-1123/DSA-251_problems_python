@@ -44,3 +44,15 @@ def getSecondOrderElements(n: int,  a: [int]) -> [int]:
     a.sort(reverse= True)
     return a[1],a[-2]
     pass
+
+#P9: Rotate array
+
+def rotateArray(arr: list, k: int) -> list:
+    # Write your code here.
+    while k:
+        arr.append(arr[0])
+        arr.pop(0)
+        k-=1
+    return arr    
+
+    pass
