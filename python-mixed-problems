@@ -72,3 +72,13 @@ def checkPalindrome(s):
 	return True		
 	# Return a boolean
 	pass
+
+#p11:Reverse Words In A String
+
+def reverseString(str: str) -> str:
+    # Write your code from here.
+    a = str.split()
+    s = a[::-1]
+    n=" ".join(s)
+    return n
+    pass
