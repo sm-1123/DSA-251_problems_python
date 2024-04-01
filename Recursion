@@ -1,1 +1,9 @@
+#P1:Print n times
 
+from  typing import *
+
+def printNtimes(n: int) -> List[str]:
+    result = [f"Coding Ninjas"]*n
+    #print(" ".join(result), end="")
+    return result
+    pass
