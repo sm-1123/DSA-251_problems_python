@@ -38,7 +38,7 @@ def isPalindrome(string: str) -> bool:
 
     pass
 
-#P5:Print Fibonacci Series
+#P4:Print Fibonacci Series
 
 from typing import List
 
