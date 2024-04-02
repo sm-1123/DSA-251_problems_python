@@ -7,3 +7,21 @@ def printNtimes(n: int) -> List[str]:
     #print(" ".join(result), end="")
     return result
     pass
+
+#P2:Factorial Numbers Not Greater Than N
+
+from typing import *
+
+def factorialNumbers(n: int) -> List[int]:
+    # Write your code here
+    result = []
+    k=1
+    i=1
+    while(k<=n):
+        result.append(k)
+        i += 1
+        k *= i
+        
+    return result        
+
+    pass
