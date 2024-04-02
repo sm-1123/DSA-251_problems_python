@@ -37,3 +37,36 @@ def isPalindrome(string: str) -> bool:
         return False    
 
     pass
+
+#P5:Print Fibonacci Series
+
+from typing import List
+
+def generateFibonacciNumbers(n: int) -> List[int]: 
+    # Write your code here
+    result=[]
+
+    a=0
+
+    b=1
+
+    if(n<=1):
+
+        result.append(a)
+
+    else:
+        result.append(a)
+        result.append(b)
+    return fib(a,b,result,n)
+
+def fib(a,b,result,n):
+
+    c=a+b
+
+    if(len(result)==n):
+
+        return result
+
+    result.append(c)
+
+    return fib(b,c,result,n)
