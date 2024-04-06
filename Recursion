@@ -81,3 +81,30 @@ def findKthElement(arr1, arr2, k):
 	#arr1.sort()
 	#return arr1[k-1]
 	pass
+
+
+#P8:Binary strings with no consecutive 1s.
+
+from typing import List
+
+def Binastr(r,s,n):
+    if len(s) == n:
+        r.append(s)
+        return 
+
+    elif s[-1] == "1":
+        Binastr(r,s+"0",n)
+
+    else:
+        Binastr(r,s+"0",n)
+        Binastr(r,s+"1",n)        
+
+def generateString(N: int) -> List[str]:
+    # write your code here
+    res=[]
+    a="0"
+    b="1"
+    Binastr(res,a,N)
+    Binastr(res,b,N)
+    return res
+    pass
