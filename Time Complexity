@@ -1,1 +1,24 @@
+#P1: Non-Decreasing Array
 
+from os import *
+from sys import *
+from collections import *
+from math import *
+
+def isPossible(arr, n):
+    # Write your code here.
+    cng=0
+    for i in range(len(arr)-1):
+        if arr[i]<=arr[i+1]:
+            continue
+        if cng:
+            return False
+
+        if i==0 or arr[i+1]>=arr[i-1]:
+            arr[i]=arr[i+1]
+        else:
+            arr[i+1]=arr[i]
+        cng=1
+    return True             
+
+    pass
