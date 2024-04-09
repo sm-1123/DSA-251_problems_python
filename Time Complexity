@@ -67,6 +67,31 @@ def firstMissing(arr, n):
     return n+1     
     pass
 
+#P4:Minimum Parentheses
+
+from os import *
+from sys import *
+from collections import *
+from math import *
+
+def minimumParentheses(pattern):
+
+    # Write your code here
+    cnt_o=0
+    cnt_c=0
+    for i in pattern:
+        if i == "(":
+            cnt_o += 1
+        elif cnt_o>0:
+            cnt_o -= 1
+        else:
+            cnt_c += 1    
+
+    return cnt_o+cnt_c    
+
+    
+    # Return the minimum number of parentheses required.
+    pass
 
 
     
