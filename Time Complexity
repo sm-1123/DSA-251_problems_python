@@ -93,5 +93,32 @@ def minimumParentheses(pattern):
     # Return the minimum number of parentheses required.
     pass
 
+#P5:Beautiful String
 
+def makeBeautiful(str):
+	# Write your code here
+	str1=[]
+	str2=[]
+	cnt1=0
+	cnt2=0
+	for i in range(len(str)):
+		if i%2 == 0:
+			str1.append("0")
+			str2.append("1")
+
+		else:
+			str1.append("1")
+			str2.append("0")
+	
+	for i in range(len(str)):
+		if str[i] != str1[i]:
+			cnt1 += 1
+		if str[i] != str2[i]:
+			cnt2 += 1
+
+	return min(cnt1, cnt2)			
+			
+
+	
+	pass
     
