@@ -1,1 +1,44 @@
+#P1:Sum Of Zeroes
 
+from os import *
+from sys import *
+from collections import *
+from math import *
+
+def coverageOfMatrix(mat):
+    # Write your code here.
+
+    cvg = 0
+
+    rows = len(mat)
+
+    clms = len(mat[0])
+
+    for i in range(rows):
+
+        for j in range(clms):
+
+            if mat[i][j] == 0:
+
+
+                if j > 0 and mat[i][j-1] == 1:
+
+                    cvg += 1
+
+                if j < clms-1 and mat[i][j+1] == 1:
+
+                    cvg += 1
+
+                if i > 0 and mat[i-1][j] == 1:
+
+                    cvg += 1
+
+                if i < rows-1 and mat[i+1][j] == 1:
+
+                    cvg += 1
+
+    return cvg                           
+
+
+    
+    pass
