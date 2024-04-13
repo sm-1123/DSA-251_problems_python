@@ -42,3 +42,25 @@ def coverageOfMatrix(mat):
 
     
     pass
+
+#P2:Matrix Is Symmetric
+
+def isMatrixSymmetric(matrix):
+    # Write your code here.  
+    rows = len(matrix)
+
+    clms = len(matrix[0])
+
+    if rows != clms:
+
+        return False
+
+    for i in range(rows):
+
+        for j in range(clms):
+
+            if(matrix[i][j] != matrix[j][i]):
+
+                return False
+
+    return True    
