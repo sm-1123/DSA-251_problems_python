@@ -64,3 +64,21 @@ def isMatrixSymmetric(matrix):
                 return False
 
     return True    
+
+#P3:Inplace rotate matrix 90 degree
+
+def inplaceRotate(inputArray, n):
+
+    # Write your code here.
+
+    for i in range(n):
+
+        inputArray[i].reverse()
+    
+    for i in range(n):
+
+        for j in range(i,n):
+
+            inputArray[i][j], inputArray[j][i] = inputArray[j][i], inputArray[i][j]
+
+    return inputArray        
