@@ -34,3 +34,28 @@ def minElementsToRemove(arr):
             unique_set.add(i)
 
     return cnt
+
+#P2:First non repeating character
+
+def firstNonRepeatingCharacter(str):
+
+    # Write your Code here.
+    char_freq = {}
+
+    for char in str:
+
+        if char in char_freq:
+
+            char_freq[char] += 1
+
+        else:
+
+            char_freq[char] = 1
+
+    for char in str:
+
+        if char_freq[char] == 1:
+
+            return char
+
+    return str[0]
