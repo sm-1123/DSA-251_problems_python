@@ -1,1 +1,36 @@
+#P1:Make Unique Array
+(SOL1)
+def minElementsToRemove(arr):
 
+    # Write your Code here.
+    N = 0
+
+    dict = {}
+
+
+    for i in arr:
+
+        if i in dict:
+
+            N += 1
+
+        else:
+
+            dict[i] = True
+
+    return N  
+(SOL2)-------------------------------------------
+
+def minElementsToRemove(arr):
+
+    # Write your Code here.
+    unique_set = set()
+    cnt = 0
+
+    for i in arr:
+        if i in unique_set:
+            cnt += 1
+        else:
+            unique_set.add(i)
+
+    return cnt
