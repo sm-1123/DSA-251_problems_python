@@ -89,3 +89,31 @@ def LongestSubsetWithZeroSum(arr):
 
     return max_length                
 
+#P3:Count all sub-arrays having sum divisible by k
+
+def subArrayCount(arr, k):
+
+    # Write your code here.
+    dict = {0:1}
+
+    cum_sum = 0
+
+    total_sum = 0
+
+    for i in range(len(arr)):
+
+        cum_sum += arr[i]
+
+        rem = cum_sum%k
+
+        if rem in dict:
+
+            total_sum += dict.get(rem)
+
+            dict[rem] += 1
+
+        else:
+
+            dict[rem] = 1
+
+    return total_sum    
