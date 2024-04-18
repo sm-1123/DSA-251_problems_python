@@ -59,3 +59,33 @@ def firstNonRepeatingCharacter(str):
             return char
 
     return str[0]
+
+#P2:Longest Subarray Zero Sum
+
+def LongestSubsetWithZeroSum(arr):
+
+    # Write your Code here.
+    hashmap = {}
+
+    sum = 0
+
+    max_length = 0
+
+    for i in range(len(arr)):
+
+        sum += arr[i]
+
+        if sum == 0:
+
+            max_length = i+1
+
+        if sum in hashmap:
+
+            max_length = max(max_length, i-hashmap[sum])
+
+        else:
+
+            hashmap[sum] = i
+
+    return max_length                
+
