@@ -39,3 +39,22 @@ def separateNegativeAndPositive(nums):
             nums[i],nums[j] = nums[j],nums[i]
 
     return nums  
+#P3:Container With Most Water
+def maxArea(height):
+    
+    # Write your code here.
+    i = 0
+    j = len(height)-1
+    diff=0
+    area=0
+    max_area=0
+    while(i<j):
+        diff = j-i
+        area = diff*min(height[i],height[j])
+        max_area=max(area,max_area)
+        if height[i]<height[j]:
+            i += 1
+        else:
+            j -= 1
+
+    return max_area  
