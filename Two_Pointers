@@ -75,29 +75,3 @@ def isSubSequence(str1, str2):
         return True
     else:
         return False 
-#P5:Maximum Subarray Sum
-import sys
-
-from sys import stdin,setrecursionlimit
-setrecursionlimit(10**7)
-
-def maxSubarraySum(arr, n) :
-
-	# Your code here
-    maxi = -sys.maxsize-1
-    sum = 0
-
-    for i in range(n):
-        sum += arr[i]
-        if sum<0:
-            sum = 0
-        if sum>maxi:
-            maxi=sum
-            maxi = max(maxi,sum)
-        
-    return maxi            
-
-
-
-    # return the answer
-	 
