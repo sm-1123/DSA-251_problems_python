@@ -23,3 +23,44 @@ def areAnagram(str1, str2):
         return 1
 
     return 0      
+P2: Intersection Of Two Sorted Arrays
+def findArrayIntersection(arr: list, n: int, brr: list, m: int):
+    # Write your code here
+    i = 0
+
+    j = 0
+
+    result = []
+
+    while i<len(arr) and j<len(brr):
+
+        if arr[i] == brr[j]:
+
+            result.append(arr[i])
+
+            i += 1
+
+            j += 1
+
+        elif arr[i] < brr[j]:
+
+            i += 1
+
+        else:
+
+            j += 1
+
+    if result != 0:
+
+        return result
+
+    else:
+
+        return -1    
+
+
+
+       
+    # Return a list containing all the common elements in arr and brr.
+    pass
+
