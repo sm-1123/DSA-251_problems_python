@@ -93,4 +93,36 @@ def sort(n: int, arr: List[int]) -> List[int]:
 
 
     pass
+P5:Rotate matrix to the right
+def rotateMatRight(mat, n, m, k):
+	# Write your code here.
+	temp = [0]*m
+    
+	res = []
+
+	k = k%m
+
+	for i in range(0,n):
+
+		for t in range(0, m-k):
+
+			temp[t] = mat[i][t]
+
+		for j in range(m-k,m):
+
+			mat[i][j-m+k] = mat[i][j]
+
+		for j in  range(k,m):
+
+			mat[i][j] = temp[j-k]
+
+		for j in range(m):
+
+			res.append(mat[i][j])
+
+        
+	return res
+
+	pass
+
 
