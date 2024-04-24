@@ -124,5 +124,33 @@ def rotateMatRight(mat, n, m, k):
 	return res
 
 	pass
+P7:Sum of Two Elements Equals the Third.
+def findTriplet(arr,n):
+	# Write your code here
+	arr.sort()
+
+	for i in range(len(arr) - 1, -1,-1):
+
+		left = 0
+
+		right = i-1
+
+		while left < right:
+
+			sum = arr[left] + arr[right]
+
+			if arr[i] == sum:
+
+				return [arr[left], arr[right], arr[i]]
+
+			elif sum < arr[i]:
+
+				left += 1
+
+			else:
+
+				right -= 1
+
+	return []
 
 
