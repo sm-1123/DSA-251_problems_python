@@ -209,7 +209,7 @@ def lengthOfLongestConsecutiveSequence(arr, n):
     return ans            
 
     pass
-P10: Maximum subarray sum after K concatenation
+P10: Maximum subarray sum after K concatenation(fail 1 test case - try again)
 def maxSubSumKConcat(arr, n, k):
 
 	# Write your code here.
