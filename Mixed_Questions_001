@@ -227,7 +227,42 @@ def maxSubSumKConcat(arr, n, k):
 
 			max_ending_here = 0
 
-	return max_so_far		
+	return max_so_far	
+P12:Multiply Strings
+def multiplyStrings(a, b):
+    # Write your code here
+    a = [int(digit) for digit in a][::-1]
+
+    b = [int(digit) for digit in b][::-1]
+
+    result = [0]*(len(a)+len(b))
+
+    for i,digit2 in enumerate(b):
+
+        carry = 0
+
+        for j,digit1 in enumerate(a):
+
+            product = digit1*digit2 + carry + result[i+j]
+
+            carry = product//10
+
+            result[i+j] = product%10
+
+        result[i+len(a)] = carry
+
+    while len(result)>1 and result[-1] == 0:
+
+        result.pop()
+
+    result = result[::-1]    
+
+    return "".join(str(digit) for digit in result)            
+
+
+    # Return the product of both given numbers
+    pass
+
 
 
 
