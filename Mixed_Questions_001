@@ -271,9 +271,9 @@ def multiplyStrings(a, b):
 P14:Missing and repeating numbers
 def missingAndRepeating(arr, n):
     # Write your code here
-    sn = n*(n+1)//2
+    sn = (n*(n+1))//2
 
-    s2n = n*(n+1)*(2*n+1)//6
+    s2n = (n*(n+1)*(2*n+1))//6
 
     s, s2 = 0, 0
 
@@ -289,10 +289,11 @@ def missingAndRepeating(arr, n):
 
     val2 = val2 // val1
 
-    x = val1 + val2 // 2
+    x = (val1 + val2) // 2
 
     y = x - val1
 
-    return x, y
-        
+    return y, x
+
     pass
+
