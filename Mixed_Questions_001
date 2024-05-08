@@ -323,3 +323,82 @@ def findAllSubarraysWithGivenSum(arr, s):
     return cnt
         
     pass
+P16:Maximum Sum Rectangle
+def kadane(arr2, start, finish, row):
+
+    Sum = 0
+    maxSum2 = -999999999999
+    i = None
+
+    finish[0] = -1
+
+    local_start = 0
+
+    for i in range(row):
+        Sum += arr2[i]
+        if Sum < 0:
+            Sum = 0
+            local_start = i + 1
+        elif Sum > maxSum2:
+            maxSum2 = Sum
+            start[0] = local_start
+            finish[0] = i
+
+    if finish[0] != -1:
+        return maxSum2
+
+    maxSum2 = arr2[0]
+    start[0] = finish[0] = 0
+
+    for i in range(1, row):
+        if arr2[i] > maxSum2:
+            maxSum2 = arr2[i]
+            start[0] = finish[0] = i
+    return maxSum2
+
+def maxSumRectangle(arr, n, m):
+
+    # write your code here
+
+    maxsum = -999999999999
+
+    sum = 0
+
+    start, finish = [0], [0]
+
+    temp = [None]*n
+
+    left, right, i = None, None, None
+
+    finalLeft, finalRight, finalTop, finalBottom = None, None, None, None
+
+    for left in range(m):
+
+        temp = [0]*n
+
+        for right in range(left,m):
+
+            for i in range(n):
+
+                temp[i] += arr[i][right]
+
+            sum = kadane(temp, start, finish, n)
+
+            if sum>maxsum:
+
+                maxsum = sum
+
+                finalLeft = left
+
+                finalRight = right
+
+                finalTop = start[0]
+
+                finalBottom = finish[0]
+
+    return maxsum               
+
+
+
+
+    pass
