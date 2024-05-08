@@ -297,3 +297,29 @@ def missingAndRepeating(arr, n):
 
     pass
 
+P15:Count All Subarrays With Given Sum
+def findAllSubarraysWithGivenSum(arr, s):
+    # Write your code here.
+    n = len(arr)
+
+    mpp = defaultdict(int)
+
+    presum = 0
+
+    cnt = 0
+
+    mpp[0] = 1
+
+    for i in range(n):
+
+        presum += arr[i]
+
+        remove = presum - s
+
+        cnt += mpp[remove]
+
+        mpp[presum] += 1
+
+    return cnt
+        
+    pass
