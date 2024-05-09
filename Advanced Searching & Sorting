@@ -29,3 +29,39 @@ def floorSqrt(n):
 
 n= int(input())
 print(floorSqrt(n))
+
+P2:Search In Rotated Sorted Array
+def search(arr, target) :
+    # Write your code here.
+    l = 0
+
+    r = len(arr) - 1
+
+    while(l < r):
+
+        mid = (l + r)//2
+
+        if arr[0] <= arr[mid]:
+
+            if arr[0] <= target <= arr[mid]:
+
+                r = mid
+
+            else:
+
+                l = mid + 1
+
+        else:        
+
+            if arr[mid] < target <= arr[r]:
+
+                l = mid + 1
+
+            else:
+
+                r = mid
+
+    return l if arr[l] == target else -1
+    
+                        
+    pass
