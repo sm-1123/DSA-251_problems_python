@@ -101,6 +101,77 @@ def singleNonDuplicate(arr):
 
 
     pass
+P4:Matrix Median
+def upper_bound(arr, x, n):
+
+    low, high = 0, n - 1
+
+    ans = n
+
+    while(low <= high):
+
+        mid = (low + high)//2
+
+        if arr[mid] > x:
+
+            ans = mid
+
+            high = mid - 1
+
+        else:
+
+            low = mid + 1
+
+    return ans            
+
+
+def cnt_small_equals(matrix, n, m, x):
+
+    cnt = 0
+
+    for i in range(n):
+
+        cnt += upper_bound(matrix[i], x, m)
+
+    return cnt    
+
+
+def getMedian(matrix):
+    # Write your code here.
+    n, m = len(matrix), len(matrix[0])
+
+    low, high = matrix[0][0], 0
+
+    for i in range(n):
+
+        low = min(low, matrix[i][0])
+
+        high = max(high, matrix[i][m - 1])
+
+    required = (n * m )//2
+
+    while low <= high:
+
+        mid = (low + high)//2
+
+        small_equals = cnt_small_equals(matrix, n, m, mid)
+
+        if small_equals <= required:
+
+            low = mid + 1
+
+        else:
+
+            high = mid - 1
+
+    return low            
+     
+
+        
+
+
+    pass
+
 
 
     return l if arr[l] == target else -1
