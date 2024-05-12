@@ -178,3 +178,48 @@ def getMedian(matrix):
     
                         
     pass
+P5:Aggressive Cows
+def canweplace(arr, dist, cows):
+
+    cntcows = 1
+
+    last = arr[0]
+
+    m = len(arr)
+
+    for i in range(m):
+
+        if arr[i] - last >= dist:
+
+            cntcows += 1
+
+            last = arr[i]
+
+        if cntcows >= cows:
+
+            return True
+
+    return False            
+
+def aggressiveCows(stalls, k):
+    # Write your code here.
+    stalls.sort()
+
+    n = len(stalls)
+
+    low, high = 1, stalls[n - 1] - stalls[0]
+
+    while low <= high:
+
+        mid = (low + high)//2
+
+        if canweplace(stalls, mid, k) == True:
+
+            low = mid + 1
+
+        else:
+
+            high = mid - 1
+
+    return high              
+    pass
