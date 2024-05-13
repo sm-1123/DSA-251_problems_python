@@ -59,6 +59,34 @@ def searchInLinkedList(head, k):
         head = head.next    
 
     return 0             
+P4:Reverse Linked List
+def reverseLinkedList(head):
+    # Write your code here.
+    if head == None:
+
+        return head
+
+    current = head
+
+    previous_top = None
+
+    while(current):
+
+        next_to_current = current.next
+
+        current.next = previous_top
+
+        previous_top = current
+
+        current = next_to_current
+
+    head = previous_top
+
+    return head    
+
+
+
+    pass
 
 
 
