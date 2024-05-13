@@ -103,6 +103,39 @@ def findMiddle(head):
     return slow         
     # head denoted head of linked list
     pass
+P7:Add Two Numbers[TC:O(MAX(M,N))==SC]
+class Node:
+    def __init__(self, data=0, next=None):
+        self.data = data
+        self.next = next
+
+
+# Don't change the code above.
+
+
+def addTwoNumbers(head1: Node, head2: Node) -> Node:
+    # Write your code here.
+    dummynode = Node(-1)
+    carry = 0
+    curr = dummynode
+    while ((head1 != None or head2 != None) or carry):
+        sum = 0
+        if head1 != None:
+            sum += head1.data
+            head1 = head1.next
+        if head2 != None:
+            sum += head2.data
+            head2 = head2.next
+        sum += carry    
+        carry = sum//10
+        curr.next = Node(sum%10)
+        curr = curr.next
+
+
+    return dummynode.next                
+
+    pass
+
 
 
 
