@@ -1,1 +1,22 @@
+P1:Insert Node At The Beginning
+class Node:
+    def __init__(self, data=0, next=None):
+        self.data = data
+        self.next = next
+
+
+# Do not change code above.
+
+
+def insertAtFirst(list: Node, newValue: int) -> Node:
+    # Write your code here
+    new_node = Node(newValue)
+
+    new_node.next = list
+
+    list = new_node
+
+    return list
+    
+    pass
 
