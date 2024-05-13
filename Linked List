@@ -19,4 +19,33 @@ def insertAtFirst(list: Node, newValue: int) -> Node:
     return list
     
     pass
+P2:Delete Node Of Linked List
+class Node:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
+# Please do not change code above.
+
+
+def deleteLast(list: Node) -> Node:
+    # Write your code here
+    current = list
+
+    prev = None
+
+    while current.next is not None:
+
+        prev = current
+
+        current = current.next
+
+    prev.next = None
+
+    return list    
+
+
+    pass
+
 
