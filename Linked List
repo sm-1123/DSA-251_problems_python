@@ -135,6 +135,38 @@ def addTwoNumbers(head1: Node, head2: Node) -> Node:
     return dummynode.next                
 
     pass
+P8:Insertion Sort in Linked List
+class Node:
+	def __init__(self, data):
+	    self.data = data
+	    self.next = None
+
+
+def insertionSortLL(head):
+	# Write your code here
+	dummy = Node(1000000000)
+
+	while(head):
+
+		next = head.next
+
+		temp = dummy
+
+		while temp.next and temp.next.data < head.data:
+
+			temp = temp.next
+
+		head.next = temp.next
+
+		temp.next = head
+
+		head = next
+
+	return dummy.next		
+
+
+	# Return the head of the updated(sorted) linked list
+	pass
 
 
 
