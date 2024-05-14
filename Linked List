@@ -197,6 +197,44 @@ def removeKthNode(head, k):
     return head
                 
     pass
+P10:Detect and Remove Loop
+from typing import *
+
+# Following is the structure of  Node
+# Do not update or change the structure 
+
+class Node:
+
+    def __init__(self, val):
+        self.val = val
+        self.next = None
+
+def removeLoop(head :Node) -> Node :
+
+    # Write your code
+    slowp = head
+
+    fastp = head
+
+    while fastp is not None and fastp.next is not None:
+
+        slowp = slowp.next
+
+        fastp = fastp.next.next
+
+        if slowp == fastp:
+
+            slowp = head
+
+            while slowp.next != fastp.next:
+
+                slowp = slowp.next
+
+                fastp = fastp.next
+
+            fastp.next = None    
+            
+    pass
 
 
 
