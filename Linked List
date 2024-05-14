@@ -252,6 +252,51 @@ def pairsSwap(head):
         p2.next = p1    
 
     return p2
+P10:Segregate Odd-Even
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+
+def segregateOddEven(head):
+
+    # Write your code here.
+    new_node = Node(0)
+
+    nh = new_node
+
+    even = Node(0)
+
+    eh = even
+
+    temp = head
+
+    while(temp):
+
+      if temp.data % 2 != 0:
+
+        new_node.next = temp
+
+        new_node = new_node.next
+
+      else:
+
+        even.next = temp
+
+        even = even.next
+
+      temp = temp.next
+
+    even.next = None    
+
+    new_node.next = eh.next
+
+    return nh.next  
+
+
+    pass
 
 
 
