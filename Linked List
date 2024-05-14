@@ -235,6 +235,23 @@ def removeLoop(head :Node) -> Node :
             fastp.next = None    
             
     pass
+P10:Swap Nodes in Pairs
+def pairsSwap(head):
+
+    # Write your code here.        
+    if head is None or head.next is None:
+
+        return head
+
+    else:    
+
+        p1, p2 = head, head.next
+
+        p1.next = pairsSwap(p2.next)
+
+        p2.next = p1    
+
+    return p2
 
 
 
