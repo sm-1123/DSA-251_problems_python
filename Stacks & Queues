@@ -199,6 +199,48 @@ class Queue :
             return -1
 
         return self.head.data    
+P4:Queue Using Two Stacks
+class Queue:
+    # Stacks to be used in the operations.
+    def __init__(self):
+        self.stk1 = []
+        self.stk2 = []
+
+    # Enqueues 'X' into the queue. Returns true after enqueuing.
+    def enqueue(self, X):
+        # Write your code here
+        while self.stk1:
+
+            self.stk2.append(self.stk1.pop())
+
+        self.stk1.append(X)
+
+        while self.stk2:
+
+            self.stk1.append(self.stk2.pop())
+
+        return True        
+
+    pass
+
+    """
+      Dequeues top element from queue. Returns -1 if the queue is empty, 
+      otherwise returns the popped element.
+    """
+    def dequeue(self):
+        # Write your code here
+        if len(self.stk1) == 0:
+
+            return -1
+
+        X = self.stk1[-1]
+
+        self.stk1.pop()
+
+        return X    
+
+
+        pass
 
 
 
