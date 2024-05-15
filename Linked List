@@ -297,6 +297,61 @@ def segregateOddEven(head):
 
 
     pass
+P11:Append Nodes
+class Node:
+    def __init__(self, data):
+       	self.data = data
+        self.next = None
+
+def insertNode(prev, newNode):
+
+    newNode.next = prev.next
+
+    prev.next = newNode        
+
+def addNodes(head, n, m):
+    # Write your code here.
+    total = n + m
+
+    position = 0
+
+    nodeSum = None
+
+    curr = prev = head
+
+    while curr:
+
+        if position % total >= m:
+
+            if nodeSum is not None:
+
+                nodeSum += curr.data
+
+            else:
+
+                nodeSum = curr.data
+
+        if position != 0 and position % total == 0:
+
+            newNode = Node(nodeSum)
+
+            insertNode(prev, newNode)
+
+            nodeSum = None
+
+        position += 1
+
+        prev = curr
+
+        curr = curr.next
+
+    if nodeSum is not None:
+
+        prev.next = Node(nodeSum)
+
+    return head
+
+    pass
 
 
 
