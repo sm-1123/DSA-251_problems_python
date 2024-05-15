@@ -129,7 +129,7 @@ class Stack:
             return self.head.data
                 
         pass
-P3:Implement a Queue
+P3:Implement a Queue[1 test case failled]
 class Node:
 
     def __init__(self, data):
