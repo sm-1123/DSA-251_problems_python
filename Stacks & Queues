@@ -63,5 +63,71 @@ class Stack:
             return 0
 
         pass
+P2:Implement Stack With Linked List
+class Node:
+    def __init__(self, data, next_node=None):
+        self.data = data
+        self.next = next_node
+
+class Stack:
+    # Write your code here
+    def __init__(self):
+    # Write your code here
+        self.head = None
+
+        self.size = 0
+
+        pass
+        
+    def getSize(self):
+        # Write your code here
+        return self.size
+
+        pass
+
+    def isEmpty(self):
+        # Write your code here
+        return self.head is None
+
+        pass
+
+    def push(self, data):
+        # Write your code here
+        newNode = Node(data)
+
+        newNode.next = self.head
+
+        self.head = newNode
+
+        self.size += 1
+
+        pass
+
+    def pop(self):
+        # Write your code here
+        if self.head is None:
+
+            return None
+
+        data = self.head.data
+
+        self.head = self.head.next
+
+        self.size -= 1
+
+        return data
+
+        pass
+    def getTop(self):
+        # Write your code here
+        if self.head is None:
+
+            return None
+
+        else:
+
+            return self.head.data
+                
+        pass
 
 
