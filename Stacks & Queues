@@ -241,6 +241,61 @@ class Queue:
 
 
         pass
+P5:Stack using queue
+from typing import List
+from _collections import deque
+
+class Stack:
+    def __init__(self):
+        # Define the data members.
+        self.q = deque()
+
+        pass
+
+    def getSize(self) -> int:
+        # Implement the getSize() function.
+        return len(self.q)
+
+        pass
+
+    def isEmpty(self) -> bool:
+        # Implement the isEmpty() function.
+        return len(self.q) == 0
+
+        pass
+
+    def push(self, element: int) -> None:
+        # Implement the push() function.
+        s = len(self.q)
+
+        self.q.append(element)
+
+        for i in range(s):
+
+            self.q.append(self.q.popleft())
+
+        pass
+
+    def pop(self) -> int:
+        # Implement the pop() function.
+        if not self.q :
+
+            return -1
+
+        return self.q.popleft()    
+
+        pass
+
+    def top(self) -> int:
+        # Implement the top() function.
+        if self.isEmpty():
+
+            return -1
+
+        return self.q[0]
+
+        pass
+
 
 
 
