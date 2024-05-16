@@ -382,6 +382,24 @@ def nextGreater(arr,n):
             stk.append(arr[i % n])
 
     return nge    
+P8:Reversing a Queue
+def reverseQueue(q):
+    # Write your code here
+
+    new = []
+
+    while not q.empty():
+
+        new.append(q.get())
+
+    while new:
+
+        q.put(new.pop())
+
+    # Return a queue
+    return q
+    
+    pass
 
 
 
