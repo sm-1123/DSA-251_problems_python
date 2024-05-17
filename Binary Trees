@@ -26,4 +26,20 @@ def getInOrderTraversal(root):
     return ans
 
     pass
+P3:Postorder Traversal
+def postorderTraversal(root) -> List[int]:
+    # Write your code here.
+    res = []
+
+    if root:
+
+        res.extend(postorderTraversal(root.left))
+
+        res.extend(postorderTraversal(root.right))
+
+        res.append(root.val)
+        
+    return res
+        
+    pass
 
