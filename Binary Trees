@@ -43,4 +43,29 @@ def postorderTraversal(root) -> List[int]:
     return res
         
     pass
+P4:Diameter Of Binary Tree
+def diameterOfBinaryTree(root: TreeNode) -> int:
+    # Write your code here.
+    diameter = [0]
+
+    calculateHeight(root, diameter)
+
+    return diameter[0]
+
+    pass
+
+def calculateHeight(node, diameter):
+
+    if not node:
+
+        return 0
+
+    lh = calculateHeight(node.left, diameter)
+
+    rh = calculateHeight(node.right, diameter)
+
+    diameter[0] = max(diameter[0], lh + rh)
+
+    return 1 + max(lh, rh)
+            
 
