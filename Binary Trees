@@ -67,5 +67,27 @@ def calculateHeight(node, diameter):
     diameter[0] = max(diameter[0], lh + rh)
 
     return 1 + max(lh, rh)
+P5:LCA Of Binary Tree
+def lowestCommonAncestor(root, x: int, y: int) -> int:
+	# Write your code here.
+    if root is None:
+
+        return None
+
+    if root.data == x or root.data == y:
+
+        return root.data
+
+    left = lowestCommonAncestor(root.left, x, y)
+
+    right = lowestCommonAncestor(root.right, x, y)
+
+    if left is not None and right is not None:
+
+        return root.data
+
+    return left if left is not None else right      
+
+
             
 
