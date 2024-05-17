@@ -26,7 +26,8 @@ def getInOrderTraversal(root):
     return ans
 
     pass
-P3:Postorder Traversal
+P3:Postorder Traversal:[TC-O(N), SC-1.O(N){WORST CASE-Skewed Tree}, 
+                             2.O(logn){on average balanced tree}]
 def postorderTraversal(root) -> List[int]:
     # Write your code here.
     res = []
