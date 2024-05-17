@@ -1,1 +1,11 @@
+P1:Preorder Binary Tree
+def preOrder(root):
+	# Your code goes here
+    if root != None:
+
+        print(root.data, end=" ")
+
+        preOrder(root.left)
+
+        preOrder(root.right)
 
