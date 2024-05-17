@@ -400,6 +400,27 @@ def reverseQueue(q):
     return q
     
     pass
+P9: Valid Parentheses
+def isValidParenthesis(s: str) -> bool:
+    # Write your code here
+    stk = []
+
+    valid_brac = [('(', ')'), ('{', '}'), ('[', ']')]
+
+    for c in s:
+
+        if len(stk) > 0 and (stk[-1], c) in valid_brac:
+
+            stk.pop()
+
+        else:
+
+            stk.append(c)
+
+    return len(stk) == 0        
+
+
+    pass
 
 
 
