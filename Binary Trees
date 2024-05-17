@@ -9,4 +9,20 @@ def preOrder(root):[TC-O(N), SC-1.O(N){WORST CASE-Skewed Tree},
         preOrder(root.left)
 
         preOrder(root.right)
+P2:Inorder Traversal
+def getInOrderTraversal(root):
+    # Write your code here
+    ans = []
+
+    if root:
+        
+        ans.extend(getInOrderTraversal(root.left))
+        
+        ans.append(root.data)
+        
+        ans.extend(getInOrderTraversal(root.right))
+               
+    return ans
+
+    pass
 
