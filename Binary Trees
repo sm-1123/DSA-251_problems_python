@@ -124,6 +124,61 @@ def getLevelOrder(root):
 
 
     pass
+P7:Binary Tree Zigzag Traversal
+def zigZagTraversal(root):
+    # Write your code here
+    res = []
+
+    if not root:
+
+        return res
+
+    q = deque()
+
+    q.append(root)
+
+    leftToright = True    
+
+    while q :
+
+        size = len(q)
+
+        level = []
+
+        for i in range(size):
+
+            node = q.popleft()
+
+            level.append(node.data)
+
+            if leftToright:
+
+                index = i
+
+            else:
+
+                index = size - 1 - i
+
+            if node.left:
+
+                q.append(node.left)
+
+            if node.right:
+
+                q.append(node.right)
+
+        if not leftToright:
+
+            level.reverse()   
+
+        res.extend(level)    
+
+        leftToright = not leftToright            
+
+    return res           
+
+    pass
+
 
 
             
