@@ -87,6 +87,43 @@ def lowestCommonAncestor(root, x: int, y: int) -> int:
         return root.data
 
     return left if left is not None else right      
+P6:Level Order Traversal
+def getLevelOrder(root):
+
+    #   Write your code here
+    ans = []
+
+    if not root:
+
+        return ans
+
+    q = deque()
+
+    q.append(root)
+
+    while q:
+
+        size = len(q)
+
+        for i in range(size):
+
+            node = q.popleft()
+
+            ans.append(node.val)
+
+            if node.left:
+
+                q.append(node.left)
+
+            if node.right:
+
+                q.append(node.right)
+
+    return ans                
+
+
+
+    pass
 
 
             
