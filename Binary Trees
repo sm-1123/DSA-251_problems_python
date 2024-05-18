@@ -124,7 +124,7 @@ def getLevelOrder(root):
 
 
     pass
-P7:Binary Tree Zigzag Traversal
+P7:Binary Tree Zigzag Traversal[TC:O(N),SC:O(N)]
 def zigZagTraversal(root):
     # Write your code here
     res = []
