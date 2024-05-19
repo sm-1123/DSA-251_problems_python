@@ -1,1 +1,18 @@
+P1:Search In BST[TC:O(H),SC:O(H)]
+def searchInBST(root, x):
+    # Write your code here.
+    if root is None:
+
+        return False
+
+    elif root.data == x:
+
+        return True    
+
+    elif root.data < x:
+
+        return searchInBST(root.right, x)
+
+    return searchInBST(root.left, x)        
+    
 
