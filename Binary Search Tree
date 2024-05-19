@@ -13,6 +13,28 @@ def searchInBST(root, x):
 
         return searchInBST(root.right, x)
 
-    return searchInBST(root.left, x)        
+    return searchInBST(root.left, x)       
+P2: LCA of Two Nodes In A BST
+def LCAinaBST(root, P, Q):
+
+    # Write your code here
+    if root == None:
+
+        return None
+
+    curr = root.data    
+
+    if curr < P.data and curr < Q.data:
+
+        return LCAinaBST(root.right, P, Q)
+
+    if curr > P.data and curr > Q.data:
+
+        return LCAinaBST(root.left, P, Q)
+
+    return root            
+    # P and Q are the given nodes
+    # Return LCA node
+    pass
     
 
