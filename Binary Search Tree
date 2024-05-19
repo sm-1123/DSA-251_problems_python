@@ -14,7 +14,7 @@ def searchInBST(root, x):
         return searchInBST(root.right, x)
 
     return searchInBST(root.left, x)       
-P2: LCA of Two Nodes In A BST
+P2: LCA of Two Nodes In A BST[TC:O(H),SC:(H)-RECURSION STACK SPACE]
 def LCAinaBST(root, P, Q):
 
     # Write your code here
