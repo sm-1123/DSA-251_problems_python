@@ -1,1 +1,33 @@
+P1:Check Subset
+def checkSubset(arr1, arr2, n, m):
+    # Write your code here.    
+    arr1.sort()
+
+    arr2.sort()
+
+    i = 0
+
+    j = 0
+
+    while(i < n and  j < m):
+
+        if arr2[j] < arr1[i]:
+
+            return False
+
+        if arr1[i] == arr2[j]:
+
+            i += 1
+
+            j += 1
+
+        else:
+
+            i += 1    
+
+    if j >= m:
+
+        return True            
+
+    pass
 
