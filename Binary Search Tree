@@ -54,5 +54,39 @@ def validateBST(root):
     #Write your code here
 
     return BSTornot(root, int_min, int_max)
+P4:Kth smallest node in BST[TC-O(N),SC-O(N)]
+def inorder(node, counter, k , k_smallest):
+
+    if not node or counter[0] >= k:
+
+        return
+
+    inorder(node.left, counter, k, k_smallest)
+
+    counter[0] += 1
+
+    if counter[0] == k:
+
+        k_smallest[0] = node.data
+
+        return
+
+    inorder(node.right, counter, k, k_smallest)
+    
+            
+
+def kthSmallest(root: Optional[TreeNode], k: int) -> int:
+    
+    # Write the code here.
+    k_smallest = [float('inf')]
+
+    counter = [0]
+
+    inorder(root, counter, k, k_smallest)
+
+    return k_smallest[0]
+
+    pass
+
     
 
