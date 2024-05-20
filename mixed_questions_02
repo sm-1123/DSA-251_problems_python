@@ -1,4 +1,4 @@
-P1:Check Subset
+P1:Check Subset[TC-O(nlogn + mlogm),SC-O(1)]
 def checkSubset(arr1, arr2, n, m):
     # Write your code here.    
     arr1.sort()
