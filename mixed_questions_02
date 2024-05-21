@@ -171,7 +171,7 @@ def isPalindrome(head):
 
     return True        
 P6:BST Iterator
-class BSTiterator:[TC:O(1),SC:O(N)]
+class BSTiterator:[TC:O(1),SC:O(H)]
     def __init__(self, root):
         # Complete the constructor function
         self.stk = []
