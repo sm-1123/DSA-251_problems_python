@@ -170,4 +170,38 @@ def isPalindrome(head):
         head = head.next
 
     return True        
+P6:BST Iterator
+class BSTiterator:[TC:O(1),SC:O(N)]
+    def __init__(self, root):
+        # Complete the constructor function
+        self.stk = []
+
+        while root:
+
+            self.stk.append(root)
+
+            root = root.left
+
+        pass
+
+    def next(self):
+        # Complete the functiom
+        res = self.stk.pop()   
+
+        curr = res.right
+
+        while curr:
+
+            self.stk.append(curr)
+
+            curr = curr.left
+
+        return res.data
+
+        pass
+
+    def hasNext(self):
+        # Complete the function
+        return self.stk != []
+
 
