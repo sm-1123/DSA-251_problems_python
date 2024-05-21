@@ -123,3 +123,51 @@ def search(matrix, x):
     return [-1,-1] 
 
     pass
+P5:Palindrome Linked List[TC:O(N),SC:O(1)]
+def isPalindrome(head):
+    
+    # Write your code here.
+    def reversed_ll(node):
+
+        prev = None
+
+        while node:
+
+            temp = node.next
+
+            node.next = prev
+
+            prev = node
+
+            node = temp
+
+        return prev    
+
+    slow = head
+
+    fast = head
+
+    while fast and fast.next:
+
+        slow = slow.next
+
+        fast = fast.next.next
+
+    if fast:
+
+        slow = slow.next
+
+    slow = reversed_ll(slow)
+
+    while slow:
+
+        if head.data != slow.data:
+
+            return False
+
+        slow = slow.next
+
+        head = head.next
+
+    return True        
+
