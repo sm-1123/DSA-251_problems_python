@@ -75,4 +75,28 @@ def lcaOfThreeNodes(root, node1, node2, node3):
     return -1
 
     pass
+P3:Remove BST keys outside the given range[TC:O(N),SC:O(H)]
+def removeOutsideRange(root, min, max):
+    # write yout code here
+    if root is None:
+
+        return None
+
+    root.left = removeOutsideRange(root.left, min, max)
+
+    root.right = removeOutsideRange(root.right, min, max)
+
+    if root.data < min:
+
+        rchild = root.right
+
+        return rchild
+
+    if root.data > max:
+
+        lchild = root.left
+
+        return lchild
+
+    return root
 
