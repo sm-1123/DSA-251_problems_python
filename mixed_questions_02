@@ -30,4 +30,49 @@ def checkSubset(arr1, arr2, n, m):
         return True            
 
     pass
+P2:LCA of three Nodes[TC:O(N),SC:O(N)]
+def helper(root, node1, node2, node3):
+
+    if root is None:
+
+        return None
+
+    if node1 == root.data or node2 == root.data or node3 == root.data:
+
+        return root    
+
+    left = helper(root.left, node1, node2, node3)
+
+    right = helper(root.right, node1, node2, node3)
+
+    if left is None and right is None:
+
+        return None
+
+    if left and right:
+
+        return root
+
+    if left:
+
+        return left
+
+    return right                        
+
+
+def lcaOfThreeNodes(root, node1, node2, node3):
+    
+    # Write your code here
+
+    sys.setrecursionlimit(10**6)  
+
+    temp = helper(root, node1, node2, node3)
+
+    if temp:
+
+        return temp.data
+
+    return -1
+
+    pass
 
