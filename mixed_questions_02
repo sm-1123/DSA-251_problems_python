@@ -405,6 +405,25 @@ def mergeBST(root1, root2):
 
     return buildBst(mergeSort, 0, len(mergeSort) - 1)
 
+P11:Merge Two Binary Trees[TC:O(N),SC:O(N)]
+def mergeTrees(root1, root2):
+    # Write your code here.
+    if root1 == None:
+
+        return root2
+
+    if root2 == None:
+
+        return root1
+
+    root1.data = root1.data + root2.data
+
+    root1.left = mergeTrees(root1.left, root2.left)
+
+    root1.right = mergeTrees(root1.right, root2.right)
+
+    return root1
+
 	
 
     
