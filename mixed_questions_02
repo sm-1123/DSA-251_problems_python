@@ -327,6 +327,85 @@ def sortedListToBST(head):
 		Verdict: 'CORRECT' or 'INCORRECT'
 	'''
 	pass
-    
+----------------------------date:23/5/2024--------------------------------------------------------
+P10:Merge Two BSTs[TC:O(M + N),SC:O(log(M + N)]
+def inOrder(root, bst):
+
+    if root is None:
+
+        return
+
+    inOrder(root.left, bst)
+
+    bst.append(root.data)
+
+    inOrder(root.right, bst)            
+
+def mergeArrays(a, b):
+
+    i, j = 0, 0
+
+    ans = []
+
+    while i < len(a) and j < len(b):
+
+        if a[i] < b[j]:
+
+            ans.append(a[i])
+
+            i += 1
+
+        else:
+
+            ans.append(b[j])
+
+            j += 1
+
+    while i < len(a):
+
+        ans.append(a[i])
+
+        i += 1
+
+    while j < len(b):
+
+        ans.append(b[j])
+
+        j += 1
+
+    return ans    
+
+def buildBst(nums, start, end):
+
+    if start > end:
+
+        return
+
+    mid = (start + end)//2
+
+    root = TreeNode(nums[mid])
+
+    root.left = buildBst(nums, start, mid - 1)
+
+    root.right = buildBst(nums, mid + 1, end)
+
+    return root    
+
+def mergeBST(root1, root2):
+	# Write your code here.
+    bst1 = []
+
+    bst2 = []
+
+    inOrder(root1, bst1)
+
+    inOrder(root2, bst2)
+
+    mergeSort = mergeArrays(bst1, bst2)
+
+    return buildBst(mergeSort, 0, len(mergeSort) - 1)
+
+	
+
     
 
