@@ -425,7 +425,7 @@ def mergeTrees(root1, root2):
     return root1
 
 --------------------------------date:24/05/2024---------------------------------------------
-P12:Sort a Stack[TC:O(N^2),SC: O(N)]
+P12:Sort a Stack[TC:O(N^2),SC: O(N)]------Try again
 def insert_correct_position(x, stack):
 
     if len(stack) == 0 or stack[-1] < x:
