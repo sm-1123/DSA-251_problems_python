@@ -459,6 +459,92 @@ def reverse(stack):
 def sortStack(stack):
 
     reverse(stack)
+
+P13:Boundary Traversal of Binary Tree[TC:O(N),SC:O(N)]
+def isLeaf(root):
+
+    return not root.left and not root.right
+
+def addLeftNode(root, res):
+
+    curr = root.left
+
+    while curr:
+
+        if not isLeaf(curr):
+
+            res.append(curr.data)
+
+        if curr.left:
+
+            curr = curr.left
+
+        else:
+
+            curr = curr.right
+
+def addRightNode(root, res):
+
+    temp = []
+
+    curr = root.right
+
+    while curr:
+
+        if not isLeaf(curr):
+
+            temp.append(curr.data)
+
+        if curr.right:
+
+            curr = curr.right
+
+        else:
+
+            curr = curr.left
+
+    for i in range(len(temp) - 1, -1, -1):
+
+        res.append(temp[i])
+
+def addLeaves(root, res):
+
+    if isLeaf(root):
+
+        res.append(root.data)
+
+        return
+
+    if root.left:
+
+        addLeaves(root.left, res)
+
+    if root.right:
+
+        addLeaves(root.right, res)                                
+
+def traverseBoundary(root):
+    # Write your code here.
+    res = []
+
+    if not root:
+
+        return res
+
+    if not isLeaf(root):
+
+        res.append(root.data)
+
+    addLeftNode(root, res)
+
+    addLeaves(root, res)
+
+    addRightNode(root, res)
+
+    return res
+
+
+    pass
 	
 
     
