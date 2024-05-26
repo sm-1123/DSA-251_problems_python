@@ -545,7 +545,50 @@ def traverseBoundary(root):
 
 
     pass
-	
+---------------------------date:26/05/2024---------------------------------------------------------
+P14: Implementation: HashMap
+class myHashMap :
+
+    def __init__(self) :
+        # Implement the init method(s).
+        self.dict = {}
+
+    def get(self, key) :
+        # Implement the get(k) function.
+        if key not in self.dict:
+
+            return -1
+
+        return self.dict.get(key)    
+    
+    def insert(self, key, value) :
+        # Implement the insert(k, v) function.
+        self.dict[key] = value
+
+    def remove(self, key) :
+        # Implement the remove(k) function.
+                 if key in self.dict:
+
+                     self.dict.pop(key)
+                
+    def search(self, key) :
+        # Implement the search(k) function.
+        for k in self.dict.keys():
+
+            if k == key:
+
+                return True
+
+        return False    
+
+    def getSize(self) :
+        # Implement the getSize() function.
+        return len(self.dict)    
+    
+    def isEmpty(self) :
+        # Implement the isEmpty(k) function.
+        return len(self.dict) == 0
+        
 
     
 
