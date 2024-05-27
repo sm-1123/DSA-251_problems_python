@@ -589,6 +589,73 @@ class myHashMap :
         # Implement the isEmpty(k) function.
         return len(self.dict) == 0
         
+-------------------date:27/05/2024---------------------------------------------------------
+P15:Copy List with Random Pointer[TC:O(3N),SC:O(N)]
+def insertInBetween(head):
+
+    temp = head
+
+    while temp:
+
+        nextElement = temp.next
+
+        copy = LinkedListNode(temp.data)
+
+        copy.next == nextElement
+
+        temp.next = copy
+
+        temp = nextElement
+
+def connectRandomNode(head):
+
+    temp = head
+
+    while temp:
+
+        copyNode = temp.next
+
+        if temp.random:
+
+            copyNode.random = temp.random.next
+
+        else:
+
+            copyNode.random = None
+
+        temp = temp.next.next 
+
+def deepCopyList(head):
+
+    temp = head
+
+    dummyNode = LinkedListNode(-1)
+
+    res = dummyNode
+
+    while temp:
+
+        res.next = temp.next
+
+        res = res.next
+
+        temp.next = temp.next.next
+
+        temp = temp.next     
+
+    return dummyNode.next          
+
+def cloneRandomList(head):
+    # Your code goes here.
+    if not head:
+
+        return None
+
+    insertInBetween(head)
+
+    connectRandomNode(head)
+
+    return deepCopyList(head)   
 
     
 
