@@ -756,5 +756,38 @@ def largestBST(root):
     m = largest(root)
 
     return m.size
-    
+
+---------------date:28/05/2024---------------------------------------------------
+P18:Fractional Knapsack[TC:O(logn + n),SC:O(1)]
+def maximumValue(items, n, w):
+
+	items.sort(key = lambda x: x[1] / x[0], reverse = True)
+
+	current_weight = 0
+
+	final_value = 0.0
+
+	for i in range(n):
+
+		if current_weight + items[i][0] <= w:
+
+			current_weight += items[i][0]
+
+			final_value += items[i][1]
+
+		else:
+
+			remain = w - current_weight
+
+			final_value += items[i][1] / items[i][0] * remain
+
+			break
+
+	return final_value			
+
+
+
+	# Write your code here.
+	# ITEMS contains [weight, value] pairs.
+	pass
 
