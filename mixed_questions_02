@@ -815,3 +815,41 @@ def minimumStartingIndex(gas, cost, n):
     return start
 
     pass
+
+P20:Job Sequencing Problem[TC:O(nlogn) + O(n*m), SC:O(m)]
+def jobScheduling(jobs):
+
+    jobs.sort(key = lambda x: x[2], reverse = True)
+
+    maxi = jobs[0][2]
+
+    for i in range(1, len(jobs)):
+
+        maxi = max(maxi, jobs[i][2])
+
+    slot = [-1] * (maxi + 1)
+
+    countJobs = 0
+
+    jobsProfit = 0
+
+    for i in range(len(jobs)):
+
+        for j in range(jobs[i][1], 0, -1):
+
+            if slot[j] == -1:
+
+                slot[j] = i
+
+                countJobs += 1
+
+                jobsProfit += jobs[i][2]
+
+                break
+
+    return countJobs, jobsProfit                        
+
+
+    # Write your code here
+    # Return an integer denoting the maximum pofit  
+    pass
