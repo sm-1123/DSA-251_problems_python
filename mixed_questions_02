@@ -821,11 +821,11 @@ def jobScheduling(jobs):
 
     jobs.sort(key = lambda x: x[2], reverse = True)
 
-    maxi = jobs[0][2]
+    maxi = jobs[0][1]
 
     for i in range(1, len(jobs)):
 
-        maxi = max(maxi, jobs[i][2])
+        maxi = max(maxi, jobs[i][1])
 
     slot = [-1] * (maxi + 1)
 
