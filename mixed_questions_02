@@ -791,3 +791,27 @@ def maximumValue(items, n, w):
 	# ITEMS contains [weight, value] pairs.
 	pass
 
+P19:Gas Tank
+def minimumStartingIndex(gas, cost, n):
+    # Write your code here.
+    if sum(gas) < sum(cost):
+
+        return -1
+
+    totalSum = 0
+
+    start = 0
+
+    for i in range(n):
+
+        totalSum += gas[i] - cost[i]
+
+        if totalSum < 0:
+
+            totalSum = 0
+
+            start = i + 1
+
+    return start
+
+    pass
