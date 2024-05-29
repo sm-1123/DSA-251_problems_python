@@ -934,3 +934,50 @@ def maximumXor(A: List[int]) -> int:
         maxi = max(maxi, trie.get_max(num))
 
     return maxi        
+
+P22:Number Of Distinct Substring[TC:O(N * N)]
+class Node:
+
+    def __init__(self):
+
+        self.links = [None] * 26
+
+    def containsKey(self, ch):
+
+        return self.links[ord(ch) - ord('a')] is not None
+
+    def get(self, ch):
+
+        return self.links[ord(ch) - ord('a')]
+
+    def put(self, ch, node):
+
+        self.links[ord(ch) - ord('a')] = node
+
+
+
+def distinctSubstring(word):
+    # Write your code here.
+    root = Node()
+
+    cnt = 0
+
+    n = len(word)
+
+    for i in range(n):
+
+        node = root
+
+        for j in range(i, n):
+
+            if not node.containsKey(word[j]):
+
+                node.put(word[j], Node())
+
+                cnt += 1
+
+            node = node.get(word[j])
+
+    return cnt
+                
+    pass
