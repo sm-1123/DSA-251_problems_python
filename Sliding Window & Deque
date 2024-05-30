@@ -1,1 +1,33 @@
+------------------date:30/05/2024---------------------------------------------------------
+P1:Maximum in Subarrays of length K[TC:O(N - K),SC:O(K)]
+def printSubarrayMax(arr, n, k) :
+	# write your code here
+    Q = deque()
 
+    for i in range(k):
+
+        while Q and arr[i] >= arr[Q[-1]]:
+
+            Q.pop()
+
+        Q.append(i)
+
+    for i in range(k, n):
+
+        if Q:
+
+            print(arr[Q[0]], end=" ")
+
+        while Q and Q[0] <= i - k:
+
+            Q.popleft()
+
+        while Q and arr[i] >= arr[Q[-1]]:
+
+            Q.pop()
+
+        Q.append(i) 
+
+    if Q:
+
+        print(arr[Q[0]])     
