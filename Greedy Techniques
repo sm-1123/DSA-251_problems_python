@@ -1,1 +1,96 @@
+---------------date:28/05/2024---------------------------------------------------
+P18:Fractional Knapsack[TC:O(logn + n),SC:O(1)]
+def maximumValue(items, n, w):
 
+	items.sort(key = lambda x: x[1] / x[0], reverse = True)
+
+	current_weight = 0
+
+	final_value = 0.0
+
+	for i in range(n):
+
+		if current_weight + items[i][0] <= w:
+
+			current_weight += items[i][0]
+
+			final_value += items[i][1]
+
+		else:
+
+			remain = w - current_weight
+
+			final_value += items[i][1] / items[i][0] * remain
+
+			break
+
+	return final_value			
+
+
+
+	# Write your code here.
+	# ITEMS contains [weight, value] pairs.
+	pass
+
+P19:Gas Tank[TC:O(N),SC:O(1)]
+def minimumStartingIndex(gas, cost, n):
+    # Write your code here.
+    if sum(gas) < sum(cost):
+
+        return -1
+
+    totalSum = 0
+
+    start = 0
+
+    for i in range(n):
+
+        totalSum += gas[i] - cost[i]
+
+        if totalSum < 0:
+
+            totalSum = 0
+
+            start = i + 1
+
+    return start
+
+    pass
+
+P20:Job Sequencing Problem[TC:O(nlogn) + O(n*m), SC:O(m)]
+def jobScheduling(jobs):
+
+    jobs.sort(key = lambda x: x[2], reverse = True)
+
+    maxi = jobs[0][1]
+
+    for i in range(1, len(jobs)):
+
+        maxi = max(maxi, jobs[i][1])
+
+    slot = [-1] * (maxi + 1)
+
+    countJobs = 0
+
+    jobsProfit = 0
+
+    for i in range(len(jobs)):
+
+        for j in range(jobs[i][1], 0, -1):
+
+            if slot[j] == -1:
+
+                slot[j] = i
+
+                countJobs += 1
+
+                jobsProfit += jobs[i][2]
+
+                break
+
+    return countJobs, jobsProfit                        
+
+
+    # Write your code here
+    # Return an integer denoting the maximum pofit  
+    pass
