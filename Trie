@@ -241,3 +241,90 @@ class Trie:
                 return 
 
         node.delete_end()
+
+P4: Implement Trie[TC:O(N),SC:O(N)]
+class Node:
+
+    def __init__(self):
+
+        self.links = [None] * 26
+
+        self.flag = False
+
+    def containsKey(self, ch):
+
+        return self.links[ord(ch) - ord('a')] is not None
+
+    def put(self, ch, node):
+
+        self.links[ord(ch) - ord('a')] = node
+
+    def get(self, ch):
+
+        return self.links[ord(ch) - ord('a')]
+
+    def setEnd(self):
+
+        self.flag = True
+
+    def isEnd(self):
+
+        return self.flag                   
+
+class Trie :
+
+    def __init__(self) :
+
+        self.root = Node()
+        # constructor for the Trie
+        pass
+    
+    def insert(self, string) :
+
+        node = self.root
+
+        for ch in string:
+
+            if not node.containsKey(ch):
+
+                node.put(ch, Node())
+
+            node = node.get(ch)
+
+        node.setEnd()        
+        # Insert function goes here
+        pass
+
+    
+    def search(self, word) :
+
+        node = self.root
+
+        for ch in word:
+
+            if not node.containsKey(ch):
+
+                return False
+
+            node = node.get(ch)
+
+        return node.isEnd()        
+        # Search function goes here
+        pass
+
+        
+    def startWith(self, prefix) :
+
+        node = self.root
+
+        for ch in prefix:
+
+            if not node.containsKey(ch):
+
+                return False
+
+            node = node.get(ch)
+
+        return True        
+        # StartWith function goes here
+        pass
