@@ -61,3 +61,145 @@ def maxSlidingWindow(arr, n, k):
             
     # Write your code here.
     pass
+
+P3:Implement Deque
+class Deque:
+    def __init__(self, size):
+        # Write your code here
+        self.n = size
+
+        self.q = [-1] * size
+
+        self.f = -1
+
+        self.b = -1
+
+        pass
+
+    # Pushes 'X' in the front of the deque. Returns true if it gets pushed into the deque, and false otherwise.
+    def pushFront(self, x):
+
+        if self.isFull():
+
+            return False
+
+        if self.isEmpty():
+
+            self.f = self.b = 0
+
+        else:
+
+            self.f = (self.f - 1 + self.n)%self.n
+
+        self.q[self.f] = x
+
+        return True
+
+        # Write your code here
+        pass
+
+    # Pushes 'X' in the back of the deque. Returns true if it gets pushed into the deque, and false otherwise.
+    def pushRear(self, x):
+
+        if self.isFull():
+
+            return False
+
+        if self.isEmpty():
+
+            self.f = self.b = 0
+
+        else:
+
+            self.b = (self.b + 1)%self.n
+
+        self.q[self.b] = x
+
+        return True
+
+        # Write your code here
+        pass
+
+    # Pops an element from the front of the deque. Returns -1 if the deque is empty, otherwise returns the popped element.
+    def popFront(self):
+
+        if self.isEmpty():
+
+            return -1
+
+        x = self.q[self.f]
+
+        if self.f == self.b:
+
+            self.f = self.b = -1
+
+        else:
+
+            self.f = (self.f + 1)%self.n
+
+        return x
+
+        # Write your code here
+        pass
+
+    # Pops an element from the back of the deque. Returns -1 if the deque is empty, otherwise returns the popped element.
+    def popRear(self):
+
+        if self.isEmpty():
+
+            return -1
+
+        x = self.q[self.b]
+
+        if self.f == self.b:
+
+            self.f = self.b = -1
+
+        else:
+
+            self.b = (self.b - 1 + self.n)%self.n
+
+        return x 
+
+        # Write your code here
+        pass
+
+    # Returns the first element of the deque. If the deque is empty, it returns -1.
+    def getFront(self):
+
+        if self.isEmpty():
+
+            return -1
+
+        return self.q[self.f]
+
+        # Write your code here
+        pass
+
+    # Returns the last element of the deque. If the deque is empty, it returns -1.
+    def getRear(self):
+
+        if self.isEmpty():
+
+            return -1
+
+        return self.q[self.b]
+
+        # Write your code here
+        pass
+
+    # Returns true if the deque is empty. Otherwise returns false.
+    def isEmpty(self):
+
+        return self.f == -1
+        # Write your code here
+        pass
+
+    # Returns true if the deque is full. Otherwise returns false.
+    def isFull(self):
+
+        return (self.b + 1)%self.n == self.f
+        
+        # Write your code here
+        pass
+
