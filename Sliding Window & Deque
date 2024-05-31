@@ -203,3 +203,44 @@ class Deque:
         # Write your code here
         pass
 
+P4:Anagram Substring Search[TC:O(256 * (N - M) + M),SC:O(M)-----M=256]
+MAX = 256
+
+def compare(arr1, arr2):
+
+    for i in range(MAX):
+
+        if arr1[i] != arr2[i]:
+
+            return False
+
+    return True    
+
+def findAnagramsIndices(n, m, st, ptr):
+
+    countST = [0] * 256
+
+    countPTR = [0] * 256
+
+    for i in range(m):
+
+        countPTR[ord(ptr[i])] += 1
+
+    ans = []    
+
+    for i in range(n):
+
+        countST[ord(st[i])] += 1    
+
+        if i >= m:
+
+            countST[ord(st[i - m])] -= 1
+
+        if compare(countST, countPTR):
+
+            ans.append(i - m + 1)        
+    # Write your code here.
+    # Print the number of anagram indices found
+    for index in ans:
+        print(index, end=" ")
+    print()    
