@@ -270,4 +270,40 @@ def uniqueSubstrings(input ) :
 
         right += 1
 
-    return length        
+    return length
+
+P6:Count Distinct Element in Every K Size Window[TC:O(N),SC:O(N)]
+from collections import defaultdict
+
+def countDistinctElements(arr, k):
+
+    mp = defaultdict(lambda: 0)
+ 
+    dist_count = 0
+
+    n = len(arr)
+ 
+    ans = []
+    
+    for i in range(k):
+        if mp[arr[i]] == 0:
+            dist_count += 1
+        mp[arr[i]] += 1
+ 
+    ans.append(dist_count)
+ 
+    for i in range(k, n):
+ 
+        if mp[arr[i - k]] == 1:
+            dist_count -= 1
+        mp[arr[i - k]] -= 1
+ 
+        if mp[arr[i]] == 0:
+            dist_count += 1
+        mp[arr[i]] += 1
+ 
+        ans.append(dist_count)
+
+    return ans
+
+    pass
