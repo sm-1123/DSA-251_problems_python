@@ -72,3 +72,48 @@ def minHeapToMaxHeap(arr, n) :
 
         max_heapify(arr, n, i)
     #Write your code from here
+
+P4:Implement a priority queue
+def pop(heap: List[int]) -> int:
+
+    if not heap:
+
+        return -1
+
+    heap[0], heap[-1] = heap[-1], heap[0]
+
+    max_ele = heap.pop()
+
+    i = 0
+
+    n = len(heap)
+
+    while(i < n):
+
+        lc = 2 * i + 1
+
+        rc = 2 * i + 2
+
+        largest = i
+
+        if lc < n and heap[lc] > heap[largest]:
+
+            largest = lc
+
+        if rc < n and heap[rc] > heap[largest]:
+
+            largest = rc
+
+        if largest != i:
+
+            heap[i], heap[largest] = heap[largest], heap[i]
+
+            i = largest
+
+        else:
+
+            break
+
+    return max_ele                    
+    # Write your code here.
+    pass
