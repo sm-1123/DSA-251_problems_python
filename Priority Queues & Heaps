@@ -41,3 +41,34 @@ def getKthLargest(arr, k):
     return Q[0]										
 	#	Write your code here.
 
+P3:Convert Min-Heap to Max-Heap[TC:O(N),SC:O(logn)]
+from sys import stdin
+
+def max_heapify(arr, n, i):
+
+    largest = i
+
+    left_child = 2 * i + 1
+
+    right_child = 2 * i + 2
+
+    if left_child < n and arr[left_child] > arr[largest]:
+
+        largest = left_child
+
+    if right_child < n and arr[right_child] > arr[largest]:
+
+        largest = right_child
+
+    if largest != i:
+
+        arr[i], arr[largest] = arr[largest], arr[i]
+
+        max_heapify(arr, n, largest)         
+
+def minHeapToMaxHeap(arr, n) :
+
+    for i in range((n//2) - 1, -1, -1):
+
+        max_heapify(arr, n, i)
+    #Write your code from here
