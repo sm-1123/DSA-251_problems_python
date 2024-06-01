@@ -1,1 +1,18 @@
+---------------------date:01/06/2024----------------------------------------------
+P1:Connect N Ropes With Minimum Cost[TC:O(nlogn),SC:O(N)]
+import heapq
+from sys import stdin,setrecursionlimit
+setrecursionlimit(10**7)
+
+def connectRopes( arr, n) :
+    heapq.heapify(arr)
+    res = 0
+    while(len(arr) > 1):
+        first = heapq.heappop(arr)
+
+        second = heapq.heappop(arr)
+
+        res += first + second
+        heapq.heappush(arr, first + second)
+    return res
 
