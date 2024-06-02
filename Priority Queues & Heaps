@@ -117,3 +117,5 @@ def pop(heap: List[int]) -> int:
     return max_ele                    
     # Write your code here.
     pass
+------------------------date:02/06/2024----------------------------------------------------
+P5:Running Median[TC:O(nlogn),SC:O(n)]
