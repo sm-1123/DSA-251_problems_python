@@ -31,3 +31,30 @@ def generateIPAddress(s):
     return res
     
     pass
+
+P2:All Possible Permutations - String[TC:O(n!*n),SC:O(n)]
+def recurPermut(idx, s, ans):
+
+	if idx == len(s):
+
+		ans.append(''.join(s))
+
+		return
+
+	for i in range(idx, len(s)):
+
+		s[i], s[idx] = s[idx], s[i]
+
+		recurPermut(idx+1, s, ans)
+
+		s[i], s[idx] = s[idx], s[i]
+
+def findPermutations(s):
+	# Write your code here.
+	string = list(s)
+
+	ans = []
+
+	recurPermut(0, string, ans)
+
+	return ans
