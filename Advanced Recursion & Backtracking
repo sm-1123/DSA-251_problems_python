@@ -58,3 +58,30 @@ def findPermutations(s):
 	recurPermut(0, string, ans)
 
 	return ans
+-------------------------date:03/06/2024--------------------------------------------------------
+P3:Return Subsets Sum to K[TC:O(2^n),SC:O(n)]
+def findSubsetsThatSumToK(arr, n, k) :
+    # Write your code here.
+    res = []
+
+    def backtrack(i, curr, subsetSum):
+
+        if subsetSum == k:
+
+            res.append(curr.copy())
+
+        if i == n:
+
+            return    
+
+        for j in range(i, n):    
+
+            curr.append(arr[j])
+
+            backtrack(j+1, curr, subsetSum + arr[j])
+
+            curr.pop()
+
+    backtrack(0, [], 0)
+
+    return res
