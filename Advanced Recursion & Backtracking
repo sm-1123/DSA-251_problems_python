@@ -139,3 +139,63 @@ def combinations(s):
     return res            
     # Write your code here
     pass
+--------------------------------DATE:04/06/2024--------------------------------------------------------
+P6:N Queens[TC:O(N!*N),SC:O(N)]
+def solve(cols, board, ans, leftRow, lowerDiagonal, upperDiagonal, n):
+
+    if cols == n:
+
+        temp = []
+
+        for i in range(n):
+
+            for j in range(n):
+
+                temp.append(board[i][j])
+
+        ans.append(temp)
+
+        return
+
+    for row in range(n):
+
+        if leftRow[row] == 0 and lowerDiagonal[row + cols] == 0 and upperDiagonal[n-1 + cols-row] == 0:
+
+            board[row][cols] = 1
+
+            leftRow[row] = 2
+
+            lowerDiagonal[row + cols] = 2
+
+            upperDiagonal[n-1 + cols-row] = 2       
+
+            solve(cols+1, board, ans, leftRow, lowerDiagonal, upperDiagonal, n)
+
+            board[row][cols] = 0
+
+            leftRow[row] = 0
+
+            lowerDiagonal[row + cols] = 0
+
+            upperDiagonal[n-1 + cols-row] = 0       
+            
+
+def solveNQueens(n):
+
+    ans = []
+
+    #board = [0*n for _ in range(n)]
+
+    board = [[0 for _ in range(n)] for _ in range(n)]
+
+    leftRow = [0]*n
+
+    upperDiagonal = [0]*(2*n - 1)
+
+    lowerDiagonal = [0]*(2*n - 1)
+
+    solve(0, board, ans, leftRow, lowerDiagonal, upperDiagonal, n)
+
+    return ans
+    # Write your code here.
+    
