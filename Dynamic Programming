@@ -1,1 +1,20 @@
+---------------------------------date:04/06/2024-------------------------------------------------
+P1:Count Ways To Reach The N-th Stairs[TC:O(N),SC:O(1)]
+def countDistinctWays(nStairs: int) -> int:
+    #  Write your code here.
+    mod = 1e9 + 7
+        
+    prev2 = 1
+
+    prev = 1
+
+    for i in range(2, nStairs+1):
+
+        curr_i = int((prev2 + prev)%mod)
+
+        prev2 = prev
+
+        prev = curr_i
+
+    return prev
 
