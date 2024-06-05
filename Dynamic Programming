@@ -42,3 +42,22 @@ def maxMoneyLooted(houses, n) :
         prev = curr_i
 
     return prev 
+-----------------------------date:05/06/2024---------------------------------------
+P3: Rod cutting problem[TRY AGAIN]
+def cutRod(price, n):
+
+    curr = [0] * (n + 1)
+
+    for i in range(1, n+1):
+
+        curr[i] = i * price[0]
+
+        for i in range(1, n):
+
+            for j in range(n+1):
+
+                if i+1 <= j:
+
+                    curr[j] = max(curr[j], price[i]+curr[j-(i+1)])
+
+    return curr[n]   
