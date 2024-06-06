@@ -61,3 +61,28 @@ def cutRod(price, n):
                     curr[j] = max(curr[j], price[i]+curr[j-(i+1)])
 
     return curr[n]   
+---------------------date:06/06/2024--------------------------------------------------------
+P4:Minimum Jumps[TC:O(N^2),SC:O(N)]
+SOL1-PASS 6 TEST CASE OUT OFF 11-TRY AGAIN
+import sys
+def minimumJumps(arr, n):
+
+    if n == 0 or arr[0] == 0:
+
+        return sys.maxsize
+
+    jump = [0] + [sys.maxsize] * (n-1)
+
+    for i in range(1, n):
+
+        for j in range(i):
+
+            if i <= j + arr[j] and jump[j] != sys.maxsize:
+
+                jump[i] = min(jump[i], jump[j] + 1)          
+
+    if jump[n-1] == sys.maxsize:
+
+        return -1
+SOL2:
+    return jump[n-1] 
